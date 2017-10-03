@@ -1,4 +1,4 @@
-# Angular Visual Studio Webpack Starter
+# Angular Webpack Starter with Bootstrap 4.0.0 Beta
 [![Build status](https://ci.appveyor.com/api/projects/status/3x6y01a8312x6o2p?svg=true)](https://ci.appveyor.com/project/damienbod/angular2webpackvisualstudio)
 
 >Template for [Webpack](https://webpack.js.org/concepts/), [Visual Studio](https://www.visualstudio.com/), [ASP.NET Core](https://docs.microsoft.com/en-us/dotnet/core/) and [Angular](https://angular.io/). Both the client and the server side of the application are implemented inside one ASP.NET Core project which makes it easier to deploy.
@@ -17,7 +17,7 @@
 - Testing server usign _xUnit_
 - _Yarn_ & _npm 5_
 
-## Authors
+## Starter - Authors
 <img src="https://avatars.githubusercontent.com/u/11268349?v=3" width="70" alt="Fabian Gosebrink"><img src="https://avatars.githubusercontent.com/u/3442158?v=3" width="70" alt="Damien Bowden"><img src="https://pbs.twimg.com/profile_images/707847627992338432/ytT_FxUY_400x400.jpg" width="70" alt="Roberto Simonetti">
 
 _[Fabian Gosebrink](https://twitter.com/FabianGosebrink), [Damien Bowden](https://twitter.com/damien_bod), [Roberto Simonetti](https://twitter.com/robisim74)_
@@ -166,3 +166,38 @@ The Webpack configuration could also build all of the scss and css files to a se
 
 ## License
 MIT
+
+# DonCorleone Modifications
+
+## Init
+    npm install rimraf -g  
+	rimraf node_modules
+    npm install  
+
+## GIT
+    git remote rm origin;
+    git remote add origin https://github.com/DonCorleone/AngularWebpack.git
+    git push -u origin master  
+
+# Bootstrap 4 Beta
+    npm install --save popper.js angular-popper  
+	npm uninstall bootstrap@3.3.7  
+    npm install bootstrap@4.0.0-beta --save
+
+### vendor.ts
+*// import 'bootstrap/dist/css/bootstrap-theme.css';*
+
+### webpack.dev.js
+        new webpack.ProvidePlugin({
+            $: 'jquery',
+            jQuery: 'jquery',
+            'window.jQuery': 'jquery',
+            Popper: ['popper.js', 'default']
+        }),
+### webpack.prod.js     
+        new webpack.ProvidePlugin({
+            $: 'jquery',
+            jQuery: 'jquery',
+            'window.jQuery': 'jquery',
+            Popper: ['popper.js', 'default']
+        }),

@@ -112,6 +112,13 @@ module.exports = {
             template: 'angularApp/index.html'
         }),
 
+        new webpack.ProvidePlugin({
+            $: 'jquery',
+            jQuery: 'jquery',
+            'window.jQuery': 'jquery',
+            Popper: ['popper.js', 'default']
+        }),
+        
         new CopyWebpackPlugin([
             { from: './angularApp/images/*.*', to: 'assets/', flatten: true }
         ])

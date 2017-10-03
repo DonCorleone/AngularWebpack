@@ -4,7 +4,7 @@
 
     <div class="row">
         <form class="form-inline" (ngSubmit)="addThing()" #thingForm="ngForm">
-            <div class="form-group">
+            <div class="form-control">
                 <label class="sr-only" for="exampleInputThing">Thing</label>
                 <input type="text" class="form-control" id="exampleInputThing" placeholder="Name of the thing ..." name="thing" [(ngModel)]="thing.name"
                     required>
@@ -14,8 +14,8 @@
     </div>
 
     <div class="row" *ngIf="things.length > 0">
-        <div class="table-responsive">
-            <table class="table table-striped">
+        <!-- div class="table-responsive" -->
+            <table class="table table-responsive table-striped" >
                 <thead>
                     <tr>
                         <th>#</th>
@@ -28,12 +28,12 @@
                         <td>{{i + 1}}</td>
                         <td>{{thing.name}}</td>
                         <td class="text-right">
-                            <button type="button" class="btn btn-xs btn-danger" (click)="deleteThing(thing)">Delete</button>
+                            <button type="button" class="btn btn-sm btn-danger" (click)="deleteThing(thing)">Delete</button>
                         </td>
                     </tr>
                 </tbody>
             </table>
-        </div>
+        <!-- /div -->
     </div>
 
     <div class="row" *ngIf="things.length <= 0">
