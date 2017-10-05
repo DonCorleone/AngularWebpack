@@ -9,6 +9,7 @@
     "removeComments": true,
     "noImplicitAny": true,
     "skipLibCheck": true,
+    "allowJs": true,
     "lib": [
       "es2015",
       "dom"

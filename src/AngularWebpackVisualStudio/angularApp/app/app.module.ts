@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { AppRoutes } from './app.routes';
 import { CoreModule } from './core/core.module';
 import { HomeModule } from './home/home.module';
+import { LinksModule } from './links/links.module';
 import { SharedModule } from './shared/shared.module';
 
 @NgModule({
@@ -13,7 +14,8 @@ import { SharedModule } from './shared/shared.module';
         AppRoutes,
         SharedModule,
         CoreModule.forRoot(),
-        HomeModule
+        HomeModule,
+        LinksModule
     ],
 
     declarations: [

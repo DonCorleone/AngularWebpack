@@ -185,19 +185,28 @@ MIT
     npm install bootstrap@4.0.0-beta --save
 
 ### vendor.ts
-*// import 'bootstrap/dist/css/bootstrap-theme.css';*
+```javascript
+// import 'bootstrap/dist/css/bootstrap-theme.css';
+```
 
 ### webpack.dev.js
+```javascript
         new webpack.ProvidePlugin({
             $: 'jquery',
             jQuery: 'jquery',
             'window.jQuery': 'jquery',
             Popper: ['popper.js', 'default']
         }),
+```
 ### webpack.prod.js     
+```javascript
         new webpack.ProvidePlugin({
             $: 'jquery',
             jQuery: 'jquery',
             'window.jQuery': 'jquery',
             Popper: ['popper.js', 'default']
         }),
+```
+
+### AOT
+    node_modules/.bin/ngc -p tsconfig-aot.json;
