@@ -7,6 +7,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Angular2WebpackVisualStudio.Repositories.Things;
+using Angular2WebpackVisualStudio.Repositories.Links;
 using Angular2WebpackVisualStudio.Models;
 
 namespace Angular2WebpackVisualStudio
@@ -42,6 +43,7 @@ namespace Angular2WebpackVisualStudio
 
             // Add framework services.
             services.AddSingleton<IThingsRepository, ThingsRepository>();
+            services.AddSingleton<ILinksRepository, LinksRepository>();
             services.AddMvc();
         }
 
@@ -53,6 +55,7 @@ namespace Angular2WebpackVisualStudio
 
             var angularRoutes = new[] {
                  "/home",
+                 "/links",
                  "/about"
              };
 

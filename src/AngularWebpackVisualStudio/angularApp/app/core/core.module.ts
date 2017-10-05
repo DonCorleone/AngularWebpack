@@ -3,6 +3,7 @@ import { ModuleWithProviders, NgModule } from '@angular/core';
 
 import { Configuration } from '../app.constants';
 import { ThingService } from './services/thing-data.service';
+import { LinkService } from './services/link-data.service';
 
 @NgModule({
     imports: [
@@ -16,6 +17,7 @@ export class CoreModule {
             ngModule: CoreModule,
             providers: [
                 ThingService,
+                LinkService,
                 Configuration
             ]
         };
