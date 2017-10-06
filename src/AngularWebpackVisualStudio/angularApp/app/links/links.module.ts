@@ -3,8 +3,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
-import { LinksComponent } from './components/links.component';
 import { LinksRoutes } from './links.routes';
+import { LinksComponent } from './components/links.component';
+
 
 @NgModule({
     imports: [
@@ -15,10 +16,6 @@ import { LinksRoutes } from './links.routes';
     ],
 
     declarations: [
-        LinksComponent
-    ],
-
-    exports: [
         LinksComponent
     ]
 })

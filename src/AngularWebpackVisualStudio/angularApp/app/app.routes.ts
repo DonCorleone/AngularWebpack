@@ -3,7 +3,9 @@ import { RouterModule, Routes } from '@angular/router';
 
 export const routes: Routes = [
     { path: '', redirectTo: 'home', pathMatch: 'full' },
-    { path: '', redirectTo: 'links', pathMatch: 'full' },
+    {
+        path: 'links', loadChildren: './links/links.module#LinksModule',
+    },
     {
         path: 'about', loadChildren: './about/about.module#AboutModule',
     }
