@@ -1,5 +1,9 @@
-$fontColor : rgb(255,255,255);
+$navigationFontColor : rgb(255,255,255);
 
 .navbar-light .navbar-brand {
-    color: $fontColor;
+    color: $navigationFontColor;
+}
+
+.navbar-nav li{
+    padding-left: 1rem;
 }
