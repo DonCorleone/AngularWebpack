@@ -1,4 +1,5 @@
 # Angular Webpack Starter with Bootstrap 4.0.0 Beta
+
 [![Build status](https://ci.appveyor.com/api/projects/status/3x6y01a8312x6o2p?svg=true)](https://ci.appveyor.com/project/damienbod/angular2webpackvisualstudio)
 
 >Template for [Webpack](https://webpack.js.org/concepts/), [Visual Studio](https://www.visualstudio.com/), [ASP.NET Core](https://docs.microsoft.com/en-us/dotnet/core/) and [Angular](https://angular.io/). Both the client and the server side of the application are implemented inside one ASP.NET Core project which makes it easier to deploy.
@@ -6,6 +7,7 @@
 ![vs_webpack_angular2](https://damienbod.files.wordpress.com/2016/06/vs_webpack_angular2.png?w=600)
 
 ## Features
+
 - Angular [AoT compilation](https://angular.io/guide/aot-compiler)
 - Angular [Lazy-loading modules with the router](https://angular.io/guide/ngmodule#lazy-loading-modules-with-the-router)
 - Angular [Style Guide](https://angular.io/guide/styleguide)
@@ -17,13 +19,8 @@
 - Testing server usign _xUnit_
 - _Yarn_ & _npm 5_
 
-## Starter - Authors
-<img src="https://avatars.githubusercontent.com/u/11268349?v=3" width="70" alt="Fabian Gosebrink"><img src="https://avatars.githubusercontent.com/u/3442158?v=3" width="70" alt="Damien Bowden"><img src="https://pbs.twimg.com/profile_images/707847627992338432/ytT_FxUY_400x400.jpg" width="70" alt="Roberto Simonetti">
-
-_[Fabian Gosebrink](https://twitter.com/FabianGosebrink), [Damien Bowden](https://twitter.com/damien_bod), [Roberto Simonetti](https://twitter.com/robisim74)_
-
-
 ## Table of contents
+
 * [Project structure](#1)
 * [Installing](#2)
 * [Running](#3)
@@ -36,6 +33,7 @@ _[Fabian Gosebrink](https://twitter.com/FabianGosebrink), [Damien Bowden](https:
 * [Links](#7)
 
 ## <a name="1"></a>Project structure
+
 - **src**
 	- **AngularWebpackVisualStudio** _ASP.NET Core Web API project_
 		- **.template.config** _Folder containing the template information about the dotnet new template_
@@ -60,14 +58,18 @@ _[Fabian Gosebrink](https://twitter.com/FabianGosebrink), [Damien Bowden](https:
 	- **AngularWebpackVisualStudio_Tests** _API tests_	
 
 ## <a name="2"></a>Installing
+
 Requirements:
+
 - At least [.NET Core 2.0.0](https://www.microsoft.com/net/download/core)
 - At least _node 6.9_ and _npm 4_
 
 #### Yarn
+
 You can use this template also with [yarn](https://yarnpkg.com/en/docs/install).
 
 #### Visual Studio
+
 The installed _nodejs_ on your system needs to be used inside Visual Studio and not the _nodejs_ from Visual Studio. You need to set the path of your node before the VS node.
 
 In Visual Studio: _Tools -> Options -> Projects and Solutions -> Web Package Management -> External Web Tools_
@@ -75,14 +77,17 @@ In Visual Studio: _Tools -> Options -> Projects and Solutions -> Web Package Man
 Move the _$(Path)_ option above the Visual Studio one.
 
 #### NPM Task Runner
+
 The _NPM Task Runner_ can be used to build the client application from inside Visual Studio. This task runner can be downloaded from:
 
 https://marketplace.visualstudio.com/items?itemName=MadsKristensen.NPMTaskRunner
 
 ## <a name="3"></a>Running
+
 The ASP.NET Core application contains both the server side API services and also hosts the Angular client application. The source code for the Angular application is implemented in the _angularApp_ folder. Webpack is then used to deploy the application, using the development build or a production build, which deploys the application to the wwwroot folder. This makes it easy to deploy the application using the standard tools from Visual Studio with the standard configurations.
 
 ### <a name="3.1"></a>Commands
+
 The npm scripts are used to build, watch the client application as required. The scripts can be run from the command line or the _NPM Task Runner_.
 
 The _watch-webpack-dev_ npm script automatically starts in Visual Studio because it has been added to the _package.json_:
@@ -162,40 +167,37 @@ The Webpack configuration could also build all of the scss and css files to a se
 - [Building production ready Angular apps with Visual Studio and ASP.NET Core](https://damienbod.com/2017/01/01/building-production-ready-angular-apps-with-visual-studio-and-asp-net-core/)
 
 ## License
+
 MIT
 
-# DonCorleone Modifications
+## DonCorleone Modifications
 
-## Init
-    npm install rimraf -g  
-	rimraf node_modules
-    npm install  
+### Init
 
-## GIT
+    npm install rimraf -g
+    rimraf node_modules
+    npm install
+
+### GIT
+
     git remote rm origin;
     git remote add origin https://github.com/DonCorleone/AngularWebpack.git
-    git push -u origin master  
+    git push -u origin master
 
-# Bootstrap 4 Beta
-    npm install --save popper.js angular-popper  
-	npm uninstall bootstrap@3.3.7  
+### Bootstrap 4 Beta
+
+    npm install --save popper.js angular-popper
+    npm uninstall bootstrap@3.3.7
     npm install bootstrap@4.0.0-beta --save
 
-### vendor.ts
+#### vendor.ts
+
 ```javascript
 // import 'bootstrap/dist/css/bootstrap-theme.css';
 ```
 
-### webpack.dev.js
-```javascript
-        new webpack.ProvidePlugin({
-            $: 'jquery',
-            jQuery: 'jquery',
-            'window.jQuery': 'jquery',
-            Popper: ['popper.js', 'default']
-        }),
-```
-### webpack.prod.js     
+#### webpack.dev.js
+
 ```javascript
         new webpack.ProvidePlugin({
             $: 'jquery',
@@ -205,5 +207,30 @@ MIT
         }),
 ```
 
-### AOT
+#### webpack.prod.js
+
+```javascript
+        new webpack.ProvidePlugin({
+            $: 'jquery',
+            jQuery: 'jquery',
+            'window.jQuery': 'jquery',
+            Popper: ['popper.js', 'default']
+        }),
+```
+
+#### AOT
+
     node_modules/.bin/ngc -p tsconfig-aot.json;
+
+### MongoDB
+
+#### Start
+
+    cd /usr/local/bin
+    mongod --config mongod.cfg
+
+#### credits
+
+... user: "admin",
+... pwd: "abc123!",
+... roles: [ { role: "root", db: "admin" } ]
