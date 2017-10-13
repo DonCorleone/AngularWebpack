@@ -4,6 +4,7 @@ import { ModuleWithProviders, NgModule } from '@angular/core';
 import { Configuration } from '../app.constants';
 import { ThingService } from './services/thing-data.service';
 import { LinkService } from './services/link-data.service';
+import { NoteService } from './services/note-data.service';
 
 @NgModule({
     imports: [
@@ -18,6 +19,7 @@ export class CoreModule {
             providers: [
                 ThingService,
                 LinkService,
+                NoteService,
                 Configuration
             ]
         };

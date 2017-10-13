@@ -7,6 +7,9 @@ export const routes: Routes = [
         path: 'links', loadChildren: './links/links.module#LinksModule',
     },
     {
+        path: 'notes', loadChildren: './notes/notes.module#NotesModule',
+    },
+    {
         path: 'about', loadChildren: './about/about.module#AboutModule',
     }
 ];
