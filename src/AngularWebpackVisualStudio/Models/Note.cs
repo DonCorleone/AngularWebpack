@@ -7,9 +7,17 @@ namespace Angular2WebpackVisualStudio.Models
     {
         [BsonId]
         public string Id { get; set; }
+        
+        [BsonElement("Body")]
         public string Body { get; set; } = string.Empty;
+
+        [BsonElement("UpdatedOn")]
         public DateTime UpdatedOn { get; set; } = DateTime.Now;
+
+        [BsonElement("CreatedOn")]
         public DateTime CreatedOn { get; set; } = DateTime.Now;
+
+        [BsonElement("UserId")]
         public int UserId { get; set; } = 0;
     }
 }
