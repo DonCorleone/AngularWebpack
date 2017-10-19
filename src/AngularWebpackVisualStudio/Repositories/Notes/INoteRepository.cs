@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 using Angular2WebpackVisualStudio.Models;
 using MongoDB.Driver;
 
-namespace Angular2WebpackVisualStudio.Interfaces
+namespace Angular2WebpackVisualStudio.Repositories.Notes
 {
     public interface INoteRepository
     {

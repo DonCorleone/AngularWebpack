@@ -3,12 +3,11 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Options;
 using MongoDB.Driver;
-
-using Angular2WebpackVisualStudio.Interfaces;
 using Angular2WebpackVisualStudio.Models;
 using MongoDB.Bson;
+using Angular2WebpackVisualStudio.Data;
 
-namespace Angular2WebpackVisualStudio.Data
+namespace Angular2WebpackVisualStudio.Repositories.Notes
 {
     public class NoteRepository : INoteRepository
     {

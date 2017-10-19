@@ -225,7 +225,8 @@ MIT
 
     cd /usr/local/bin
     mongod --config mongod.cfg
-
+    /Users/dev/Documents/imports/links.json
+mongoimport --db kinderkultur --collection links --drop --file ~/Documents/imports/links.json
 #### credits
 
 ... user: "admin",

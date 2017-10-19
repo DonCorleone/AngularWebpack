@@ -1,8 +1,7 @@
 using System;
 using Microsoft.AspNetCore.Mvc;
-
-using Angular2WebpackVisualStudio.Interfaces;
 using Angular2WebpackVisualStudio.Models;
+using Angular2WebpackVisualStudio.Repositories.Notes;
 
 // For more information on enabling Web API for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
 

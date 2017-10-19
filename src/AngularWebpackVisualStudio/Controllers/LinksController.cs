@@ -1,4 +1,7 @@
-﻿using System.Linq;
+﻿using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using Angular2WebpackVisualStudio.Infrastructure;
 using Angular2WebpackVisualStudio.Models;
 using Angular2WebpackVisualStudio.Repositories.Links;
 using Microsoft.AspNetCore.JsonPatch;
@@ -6,23 +9,30 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Angular2WebpackVisualStudio.Controller
 {
+    [Produces("application/json")]
     [Route("api/[controller]")]
     public class LinksController : Microsoft.AspNetCore.Mvc.Controller
     {
-        private readonly ILinksRepository _linksRepository;
+        private readonly ILinkRepository _linksRepository;
 
-        public LinksController(ILinksRepository linksRepository)
+        public LinksController(ILinkRepository linksRepository)
         {
             _linksRepository = linksRepository;
         }
 
+        [NoCache]
         [HttpGet]
-        public IActionResult Get()
+        public Task<IEnumerable<Link>> Get()
         {
-            return Ok(_linksRepository.GetAll());
+            return GetLinkInternal();
         }
 
-        [HttpPost]
+        private async Task<IEnumerable<Link>> GetLinkInternal()
+        {
+            return await _linksRepository.GetAllLinks();
+        }
+
+/*         [HttpPost]
         public IActionResult Add([FromBody] Link link)
         {
             if (link == null)
@@ -38,9 +48,9 @@ namespace Angular2WebpackVisualStudio.Controller
             Link newLink = _linksRepository.Add(link);
 
             return CreatedAtRoute("GetSingleLink", new { id = newLink.Id }, newLink);
-        }
+        } */
 
-        [HttpPatch("{id:int}")]
+/*         [HttpPatch("{id:int}")]
         public IActionResult PartiallyUpdate(int id, [FromBody] JsonPatchDocument<Link> patchDoc)
         {
             if (patchDoc == null)
@@ -66,9 +76,9 @@ namespace Angular2WebpackVisualStudio.Controller
             Link updatedLink = _linksRepository.Update(id, link);
 
             return Ok(updatedLink);
-        }
+        } */
 
-        [HttpGet]
+/*         [HttpGet]
         [Route("{id:int}", Name = "GetSingleLink")]
         public IActionResult Single(int id)
         {
@@ -80,9 +90,9 @@ namespace Angular2WebpackVisualStudio.Controller
             }
 
             return Ok(link);
-        }
+        } */
 
-        [HttpDelete]
+/*         [HttpDelete]
         [Route("{id:int}")]
         public IActionResult Remove(int id)
         {
@@ -95,9 +105,9 @@ namespace Angular2WebpackVisualStudio.Controller
 
             _linksRepository.Delete(id);
             return NoContent();
-        }
+        } */
 
-        [HttpPut]
+/*         [HttpPut]
         [Route("{id:int}")]
         public IActionResult Update(int id, [FromBody]Link link)
         {
@@ -121,6 +131,6 @@ namespace Angular2WebpackVisualStudio.Controller
             Link updatedLink = _linksRepository.Update(id, link);
 
             return Ok(updatedLink);
-        }
+        } */
     }
 }

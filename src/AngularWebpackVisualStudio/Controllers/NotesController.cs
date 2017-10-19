@@ -1,10 +1,10 @@
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using Angular2WebpackVisualStudio.Interfaces;
 using Angular2WebpackVisualStudio.Models;
 using Angular2WebpackVisualStudio.Infrastructure;
 using System;
 using System.Collections.Generic;
+using Angular2WebpackVisualStudio.Repositories.Notes;
 
 namespace Angular2WebpackVisualStudio.Controllers
 {

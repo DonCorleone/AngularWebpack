@@ -9,9 +9,8 @@ using Microsoft.Extensions.Logging;
 using Angular2WebpackVisualStudio.Repositories.Things;
 using Angular2WebpackVisualStudio.Repositories.Links;
 using Angular2WebpackVisualStudio.Models;
-using Angular2WebpackVisualStudio.Interfaces;
 using Angular2WebpackVisualStudio.Data;
-
+using Angular2WebpackVisualStudio.Repositories.Notes;
 namespace Angular2WebpackVisualStudio
 {
     public class Startup
@@ -43,7 +42,7 @@ namespace Angular2WebpackVisualStudio
 
             // Add framework services.
             services.AddSingleton<IThingsRepository, ThingsRepository>();
-            services.AddSingleton<ILinksRepository, LinksRepository>();
+           // services.AddSingleton<ILinkRepository, LinkRepository>();
             services.AddMvc();
             services.Configure<Settings>(options =>
             {
@@ -51,6 +50,7 @@ namespace Angular2WebpackVisualStudio
                 options.Database = Configuration.GetSection("MongoConnection:Database").Value;
             });
             services.AddTransient<INoteRepository, NoteRepository>();
+            services.AddTransient<ILinkRepository, LinkRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
