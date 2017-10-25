@@ -6,6 +6,7 @@ using Angular2WebpackVisualStudio.Models;
 using Angular2WebpackVisualStudio.Repositories.Links;
 using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.AspNetCore.Mvc;
+using MongoDB.Bson;
 
 namespace Angular2WebpackVisualStudio.Controller
 {
@@ -32,51 +33,63 @@ namespace Angular2WebpackVisualStudio.Controller
             return await _linksRepository.GetAllLinks();
         }
 
-/*         [HttpPost]
-        public IActionResult Add([FromBody] Link link)
+        [HttpGet("{id}")]
+        public Task<Link> GetLink(string id)
         {
-            if (link == null)
-            {
-                return BadRequest();
-            }
 
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
+            return GetLinkByIdInternal(id);
+        }
 
-            Link newLink = _linksRepository.Add(link);
-
-            return CreatedAtRoute("GetSingleLink", new { id = newLink.Id }, newLink);
-        } */
-
-/*         [HttpPatch("{id:int}")]
-        public IActionResult PartiallyUpdate(int id, [FromBody] JsonPatchDocument<Link> patchDoc)
+        private async Task<Link> GetLinkByIdInternal(string id)
         {
-            if (patchDoc == null)
-            {
-                return BadRequest();
-            }
 
-            Link existingEntity = _linksRepository.GetSingle(id);
+            return await (_linksRepository.GetLink(id));
+        }
+        /*         [HttpPost]
+                public IActionResult Add([FromBody] Link link)
+                {
+                    if (link == null)
+                    {
+                        return BadRequest();
+                    }
 
-            if (existingEntity == null)
-            {
-                return NotFound();
-            }
+                    if (!ModelState.IsValid)
+                    {
+                        return BadRequest(ModelState);
+                    }
 
-            Link link = existingEntity;
-            patchDoc.ApplyTo(link, ModelState);
+                    Link newLink = _linksRepository.Add(link);
 
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
+                    return CreatedAtRoute("GetSingleLink", new { id = newLink.Id }, newLink);
+                } */
 
-            Link updatedLink = _linksRepository.Update(id, link);
+        /*         [HttpPatch("{id:int}")]
+                public IActionResult PartiallyUpdate(int id, [FromBody] JsonPatchDocument<Link> patchDoc)
+                {
+                    if (patchDoc == null)
+                    {
+                        return BadRequest();
+                    }
 
-            return Ok(updatedLink);
-        } */
+                    Link existingEntity = _linksRepository.GetSingle(id);
+
+                    if (existingEntity == null)
+                    {
+                        return NotFound();
+                    }
+
+                    Link link = existingEntity;
+                    patchDoc.ApplyTo(link, ModelState);
+
+                    if (!ModelState.IsValid)
+                    {
+                        return BadRequest(ModelState);
+                    }
+
+                    Link updatedLink = _linksRepository.Update(id, link);
+
+                    return Ok(updatedLink);
+                } */
 
 /*         [HttpGet]
         [Route("{id:int}", Name = "GetSingleLink")]
@@ -90,47 +103,47 @@ namespace Angular2WebpackVisualStudio.Controller
             }
 
             return Ok(link);
-        } */
+        }
+ */
+        /*         [HttpDelete]
+                [Route("{id:int}")]
+                public IActionResult Remove(int id)
+                {
+                    Link link = _linksRepository.GetSingle(id);
 
-/*         [HttpDelete]
-        [Route("{id:int}")]
-        public IActionResult Remove(int id)
-        {
-            Link link = _linksRepository.GetSingle(id);
+                    if (link == null)
+                    {
+                        return NotFound();
+                    }
 
-            if (link == null)
-            {
-                return NotFound();
-            }
+                    _linksRepository.Delete(id);
+                    return NoContent();
+                } */
 
-            _linksRepository.Delete(id);
-            return NoContent();
-        } */
+        /*         [HttpPut]
+                [Route("{id:int}")]
+                public IActionResult Update(int id, [FromBody]Link link)
+                {
+                    var linkToCheck = _linksRepository.GetSingle(id);
 
-/*         [HttpPut]
-        [Route("{id:int}")]
-        public IActionResult Update(int id, [FromBody]Link link)
-        {
-            var linkToCheck = _linksRepository.GetSingle(id);
+                    if (linkToCheck == null)
+                    {
+                        return NotFound();
+                    }
 
-            if (linkToCheck == null)
-            {
-                return NotFound();
-            }
+                    if (id != link.Id)
+                    {
+                        return BadRequest("Ids do not match");
+                    }
 
-            if (id != link.Id)
-            {
-                return BadRequest("Ids do not match");
-            }
+                    if (!ModelState.IsValid)
+                    {
+                        return BadRequest(ModelState);
+                    }
 
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
+                    Link updatedLink = _linksRepository.Update(id, link);
 
-            Link updatedLink = _linksRepository.Update(id, link);
-
-            return Ok(updatedLink);
-        } */
+                    return Ok(updatedLink);
+                } */
     }
 }

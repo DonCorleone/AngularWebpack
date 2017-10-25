@@ -3,11 +3,12 @@ using System.Threading.Tasks;
 using Angular2WebpackVisualStudio.Data;
 using Angular2WebpackVisualStudio.Models;
 using Microsoft.Extensions.Options;
+using MongoDB.Bson;
 using MongoDB.Driver;
 
 namespace Angular2WebpackVisualStudio.Repositories.Links
 {
-    public class LinkRepository  : ILinkRepository
+    public class LinkRepository : ILinkRepository
     {
 
         private readonly LinkContext _context = null;
@@ -21,6 +22,24 @@ namespace Angular2WebpackVisualStudio.Repositories.Links
             try
             {
                 return await _context.Links.Find(_ => true).ToListAsync();
+            }
+            catch (System.Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+
+        public async Task<Link> GetLink(string id)
+        {
+            //    return this._collection.Find(new BsonDocument { { "_id", new ObjectId(id) } }).FirstAsync().Result;
+
+            var filter = Builders<Link>.Filter.Eq("Id", ObjectId.Parse(id));
+            try
+            {
+                return await _context.Links
+                                .Find(filter)
+                                .FirstOrDefaultAsync();
             }
             catch (System.Exception ex)
             {
