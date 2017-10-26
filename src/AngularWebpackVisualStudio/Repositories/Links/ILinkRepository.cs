@@ -8,7 +8,7 @@ namespace Angular2WebpackVisualStudio.Repositories.Links
     public interface ILinkRepository
     {
         Task<Link> GetLink(string id);
-        //  Link Add(Link item);
+        Task AddLink(Link item);
         //  void Delete(int id);
         //  Link Update(int id, Link item);
         Task<IEnumerable<Link>> GetAllLinks();

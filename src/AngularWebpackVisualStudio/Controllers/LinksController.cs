@@ -45,6 +45,21 @@ namespace Angular2WebpackVisualStudio.Controller
 
             return await (_linksRepository.GetLink(id));
         }
+
+        // POST api/links
+        [HttpPost]
+        public void Post([FromBody] Link value)
+        {
+
+            _linksRepository.AddLink(new Link()
+            {
+                Desc = value.Desc,
+                Url = value.Url,
+                UrlDesc = value.UrlDesc,
+                Name = value.Name
+            }
+            );
+        }
         /*         [HttpPost]
                 public IActionResult Add([FromBody] Link link)
                 {
@@ -91,20 +106,20 @@ namespace Angular2WebpackVisualStudio.Controller
                     return Ok(updatedLink);
                 } */
 
-/*         [HttpGet]
-        [Route("{id:int}", Name = "GetSingleLink")]
-        public IActionResult Single(int id)
-        {
-            Link link = _linksRepository.GetSingle(id);
+        /*         [HttpGet]
+                [Route("{id:int}", Name = "GetSingleLink")]
+                public IActionResult Single(int id)
+                {
+                    Link link = _linksRepository.GetSingle(id);
 
-            if (link == null)
-            {
-                return NotFound();
-            }
+                    if (link == null)
+                    {
+                        return NotFound();
+                    }
 
-            return Ok(link);
-        }
- */
+                    return Ok(link);
+                }
+         */
         /*         [HttpDelete]
                 [Route("{id:int}")]
                 public IActionResult Remove(int id)

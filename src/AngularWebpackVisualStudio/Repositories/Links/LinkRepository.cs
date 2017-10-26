@@ -17,6 +17,19 @@ namespace Angular2WebpackVisualStudio.Repositories.Links
             _context = new LinkContext(settings);
         }
 
+        public async Task AddLink(Link item)
+        {
+            try
+            {
+                await _context.Links.InsertOneAsync(item);
+            }
+            catch (System.Exception ex)
+            {
+                
+                throw ex;
+            }
+        }
+
         public async Task<IEnumerable<Link>> GetAllLinks()
         {
             try
