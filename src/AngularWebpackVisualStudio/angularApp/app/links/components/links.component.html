@@ -4,9 +4,7 @@
       <div class="card">
         <div class="card-body">
           <h4 class="card-title">{{linkIndex+1}}. {{link.name}}</h4>
-          <div class="card-text">
-            {{link.desc}}
-          </div>
+          <div class="card-text" [innerHTML] = "link.desc"></div>
           <img class="card-img-bottom" src="assets/links_{{link.name}}.png" [alt]="link.name">
         </div>
         <div class="card-footer">

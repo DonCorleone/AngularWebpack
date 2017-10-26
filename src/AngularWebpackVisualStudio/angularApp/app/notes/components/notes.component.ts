@@ -10,6 +10,7 @@ import 'rxjs/add/operator/catch';
 })
 
 export class NotesComponent implements OnInit {
+
     public notes: Note[];
 
     constructor(private dataService: NoteService) {
