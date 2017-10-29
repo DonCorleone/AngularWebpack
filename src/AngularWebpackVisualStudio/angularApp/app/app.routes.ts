@@ -8,9 +8,6 @@ export const routes: Routes = [
     },
     {
         path: 'notes', loadChildren: './notes/notes.module#NotesModule',
-    },
-    {
-        path: 'about', loadChildren: './about/about.module#AboutModule',
     }
 ];
 
