@@ -5,7 +5,7 @@ using MongoDB.Bson.Serialization.Attributes;
 namespace Angular2WebpackVisualStudio.Models
 {
     public class Link{
-        [BsonId]
+        [BsonIgnoreIfDefault]
         public ObjectId Id { get; set; }
          [BsonElement("name")]
         public string Name {get;set;}

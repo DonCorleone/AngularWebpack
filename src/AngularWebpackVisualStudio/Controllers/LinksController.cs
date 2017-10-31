@@ -60,6 +60,14 @@ namespace Angular2WebpackVisualStudio.Controller
             }
             );
         }
+
+        // PUT api/links/5
+        [HttpPut("{id}")]
+        public void Put(string id, [FromBody]Link value)
+        {
+            _linksRepository.UpdateLinkDocument(id, value);
+        }
+
         /*         [HttpPost]
                 public IActionResult Add([FromBody] Link link)
                 {

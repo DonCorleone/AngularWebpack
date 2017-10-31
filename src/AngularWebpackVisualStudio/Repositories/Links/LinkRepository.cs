@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using Angular2WebpackVisualStudio.Data;
@@ -57,6 +58,60 @@ namespace Angular2WebpackVisualStudio.Repositories.Links
             catch (System.Exception ex)
             {
 
+                throw ex;
+            }
+        }
+
+        // Demo function - full document update
+        public async Task<ReplaceOneResult> UpdateLinkDocument(string id, Link body)
+        {
+            var item = await GetLink(id) ?? new Link();
+            item.Desc = body.Desc;
+            item.Name = body.Name;
+            item.Url = body.Url;
+            item.UrlDesc = body.UrlDesc;
+            
+            return await UpdateLink(id, item);
+        }
+
+        public async Task<ReplaceOneResult> UpdateLink(string id, Link item)
+        {
+            try
+            {
+                var tempId = ObjectId.Parse(id);
+                return await _context.Links
+                            .ReplaceOneAsync<Link>(n => n.Id.Equals(tempId)
+                                            , item
+                                            , new UpdateOptions { IsUpsert = true });
+            }
+            catch (Exception ex)
+            {
+                // log or manage the exception
+                throw ex;
+            }
+        }
+        public async Task<DeleteResult> RemoveNote(string id)
+        {
+            try
+            {
+                return await _context.Links.DeleteOneAsync(
+                     Builders<Link>.Filter.Eq("Id", id));
+            }
+            catch (Exception ex)
+            {
+                // log or manage the exception
+                throw ex;
+            }
+        }
+        public async Task<DeleteResult> RemoveAllLinks()
+        {
+            try
+            {
+                return await _context.Links.DeleteManyAsync(new BsonDocument());
+            }
+            catch (Exception ex)
+            {
+                // log or manage the exception
                 throw ex;
             }
         }

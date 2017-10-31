@@ -2,6 +2,7 @@
 using System.Threading.Tasks;
 using Angular2WebpackVisualStudio.Models;
 using MongoDB.Bson;
+using MongoDB.Driver;
 
 namespace Angular2WebpackVisualStudio.Repositories.Links
 {
@@ -13,5 +14,8 @@ namespace Angular2WebpackVisualStudio.Repositories.Links
         //  Link Update(int id, Link item);
         Task<IEnumerable<Link>> GetAllLinks();
         // int Count();
+
+        // demo interface - full document update
+        Task<ReplaceOneResult> UpdateLinkDocument(string id, Link body);
     }
 }
