@@ -17,5 +17,11 @@ namespace Angular2WebpackVisualStudio.Repositories.Links
 
         // demo interface - full document update
         Task<ReplaceOneResult> UpdateLinkDocument(string id, Link body);
+
+        Task<ReplaceOneResult> UpdateLink(string id, Link body);
+
+        Task<DeleteResult> RemoveLink(string id);
+
+        Task<DeleteResult> RemoveAllLinks();
     }
 }

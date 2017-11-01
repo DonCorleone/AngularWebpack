@@ -90,12 +90,12 @@ namespace Angular2WebpackVisualStudio.Repositories.Links
                 throw ex;
             }
         }
-        public async Task<DeleteResult> RemoveNote(string id)
+        public async Task<DeleteResult> RemoveLink(string id)
         {
             try
             {
-                return await _context.Links.DeleteOneAsync(
-                     Builders<Link>.Filter.Eq("Id", id));
+                var filter = Builders<Link>.Filter.Eq("Id", ObjectId.Parse(id));
+                return await _context.Links.DeleteOneAsync(filter);
             }
             catch (Exception ex)
             {
