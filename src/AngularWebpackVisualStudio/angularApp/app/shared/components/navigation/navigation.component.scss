@@ -1,9 +1,6 @@
-$navigationFontColor : rgb(255,255,255);
+@import "../../../../styles/_variables.scss";
 
-.navbar-light .navbar-brand {
-    color: $navigationFontColor;
-}
 
-.navbar-nav li{
-    padding-left: 1rem;
+nav {
+  background-color: $colorVioletBright;
 }

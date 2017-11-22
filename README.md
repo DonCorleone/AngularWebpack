@@ -79,6 +79,9 @@ The _NPM Task Runner_ can be used to build the client application from inside Vi
 
 https://marketplace.visualstudio.com/items?itemName=MadsKristensen.NPMTaskRunner
 
+#### MongoDB C# Driver
+https://github.com/fpetru/WebApiMongoDB
+
 ## <a name="3"></a>Running
 
 The ASP.NET Core application contains both the server side API services and also hosts the Angular client application. The source code for the Angular application is implemented in the _angularApp_ folder. Webpack is then used to deploy the application, using the development build or a production build, which deploys the application to the wwwroot folder. This makes it easy to deploy the application using the standard tools from Visual Studio with the standard configurations.
