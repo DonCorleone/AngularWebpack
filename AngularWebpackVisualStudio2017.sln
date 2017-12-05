@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26403.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AngularWebpackVisualStudio", "src\AngularWebpackVisualStudio\AngularWebpackVisualStudio.csproj", "{40085317-5EE8-4719-A90B-22BD9685B7A7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AngularWebpackVisualStudio", "src\AngularWebpackVisualStudio\AngularWebpackVisualStudio.csproj", "{40085317-5EE8-4719-A90B-22BD9685B7A7}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{23B1A0C4-07DB-4A9C-9FDE-7CF33321DE87}"
 	ProjectSection(SolutionItems) = preProject
@@ -15,6 +15,8 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{262E4648-178C-4184-A629-47B09F3C426D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AngularWebpackVisualStudio_Tests", "tests\AngularWebpackVisualStudio_Tests\AngularWebpackVisualStudio_Tests.csproj", "{B51B6236-C279-42C0-B7CE-234F6D5690BD}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{C563A802-9806-41B1-BD51-739E0D36EB3E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -50,6 +52,18 @@ Global
 		{B51B6236-C279-42C0-B7CE-234F6D5690BD}.Release|x64.Build.0 = Release|Any CPU
 		{B51B6236-C279-42C0-B7CE-234F6D5690BD}.Release|x86.ActiveCfg = Release|Any CPU
 		{B51B6236-C279-42C0-B7CE-234F6D5690BD}.Release|x86.Build.0 = Release|Any CPU
+		{C563A802-9806-41B1-BD51-739E0D36EB3E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C563A802-9806-41B1-BD51-739E0D36EB3E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C563A802-9806-41B1-BD51-739E0D36EB3E}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{C563A802-9806-41B1-BD51-739E0D36EB3E}.Debug|x64.Build.0 = Debug|Any CPU
+		{C563A802-9806-41B1-BD51-739E0D36EB3E}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{C563A802-9806-41B1-BD51-739E0D36EB3E}.Debug|x86.Build.0 = Debug|Any CPU
+		{C563A802-9806-41B1-BD51-739E0D36EB3E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C563A802-9806-41B1-BD51-739E0D36EB3E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C563A802-9806-41B1-BD51-739E0D36EB3E}.Release|x64.ActiveCfg = Release|Any CPU
+		{C563A802-9806-41B1-BD51-739E0D36EB3E}.Release|x64.Build.0 = Release|Any CPU
+		{C563A802-9806-41B1-BD51-739E0D36EB3E}.Release|x86.ActiveCfg = Release|Any CPU
+		{C563A802-9806-41B1-BD51-739E0D36EB3E}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
