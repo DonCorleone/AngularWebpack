@@ -1,0 +1,8 @@
+version: '3'
+
+services:
+  angularwebpackvisualstudio:
+    image: angularwebpackvisualstudio
+    build:
+      context: ./src/AngularWebpackVisualStudio
+      dockerfile: Dockerfile
