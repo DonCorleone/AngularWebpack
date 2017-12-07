@@ -5,10 +5,6 @@
   "main": "wwwroot/index.html",
   "author": "",
   "license": "ISC",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/damienbod/Angular2WebpackVisualStudio.git"
-  },
   "scripts": {
     "start": "concurrently \"webpack-dev-server --env=dev --hot --inline --open --port 8080\"",
     "webpack-dev": "webpack --env=dev",

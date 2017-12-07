@@ -2,6 +2,8 @@
 
 ![vs_webpack_angular2](https://damienbod.files.wordpress.com/2016/06/vs_webpack_angular2.png?w=600)
 
+<https://damienbod.com/2016/06/12/asp-net-core-angular2-with-webpack-and-visual-studio/>
+
 ## Features
 
 - Angular [AoT compilation](https://angular.io/guide/aot-compiler)
